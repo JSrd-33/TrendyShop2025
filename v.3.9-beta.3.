@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trendy Products 2025</title>
+    <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/babel-standalone@6.26.0/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div id="root"></div>
+    <script type="text/babel">
+        const products = [
+            {
+                name: "Personalized Skincare",
+                description: "Customizable skincare products like serums and moisturizers, tapping into the 62% of US consumers interested in personalized beauty. High repeat purchase potential.",
+                image: "https://via.placeholder.com/300x200?text=Skincare"
+            },
+            {
+                name: "Reusable Stainless Steel Drinkware",
+                description: "Eco-friendly water bottles and mugs with a 90% surge in search interest. Perfect for sustainable shoppers and gifting.",
+                image: "https://via.placeholder.com/300x200?text=Drinkware"
+            },
+            {
+                name: "Smart Home Gadgets",
+                description: "Smart plugs and LED bulbs for easy home automation. Accessible and high-margin, ideal for bundling.",
+                image: "https://via.placeholder.com/300x200?text=Smart+Gadgets"
+            },
+            {
+                name: "Athleisure Apparel",
+                description: "Versatile leggings and hoodies for workouts and casual wear. Strong demand among millennials and Gen Z.",
+                image: "https://via.placeholder.com/300x200?text=Athleisure"
+            },
+            {
+                name: "Health Supplements",
+                description: "Mushroom gummies and collagen supplements with a 75% rise in search interest. Lightweight and high repeat orders.",
+                image: "https://via.placeholder.com/300x200?text=Supplements"
+            },
+            {
+                name: "Personalized Jewelry",
+                description: "Engraved necklaces and birthstone rings with emotional appeal. High margins, especially during holidays.",
+                image: "https://via.placeholder.com/300x200?text=Jewelry"
+            },
+            {
+                name: "Tech Accessories",
+                description: "Phone stands and power banks for remote workers and students. High demand with 18.22 billion mobile devices projected by 2025.",
+                image: "https://via.placeholder.com/300x200?text=Tech+Accessories"
+            },
+            {
+                name: "Wedge Pillows",
+                description: "Health-focused pillows for better sleep and circulation. Steady search growth for wellness-conscious buyers.",
+                image: "https://via.placeholder.com/300x200?text=Wedge+Pillow"
+            },
+            {
+                name: "Pet Products",
+                description: "Cat litter subscriptions and pet accessories with a $103.6 billion market. Recurring revenue potential.",
+                image: "https://via.placeholder.com/300x200?text=Pet+Products"
+            },
+            {
+                name: "Board Games",
+                description: "Timeless entertainment with a 13% YoY sales growth. Great for family and group fun, especially post-pandemic.",
+                image: "https://via.placeholder.com/300x200?text=Board+Games"
+            }
+        ];
+
+        function Header() {
+            return (
+                <header className="bg-blue-600 text-white py-6 text-center">
+                    <h1 className="text-4xl font-bold">Top Trending Products for 2025</h1>
+                    <p className="mt-2 text-lg">Discover high-demand products to boost your online store!</p>
+                </header>
+            );
+        }
+
+        function ProductCard({ product }) {
+            return (
+                <div className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition">
+                    <img src={product.image} alt={product.name} className="w-full h-48 object-cover rounded-md mb-4" />
+                    <h3 className="text-xl font-semibold">{product.name}</h3>
+                    <p className="text-gray-600 mt-2">{product.description}</p>
+                    <button className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                        Shop Now
+                    </button>
+                </div>
+            );
+        }
+
+        function ProductGrid() {
+            return (
+                <div className="container mx-auto py-10 px-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        {products.map((product, index) => (
+                            <ProductCard key={index} product={product} />
+                        ))}
+                    </div>
+                </div>
+            );
+        }
+
+        function Footer() {
+            return (
+                <footer className="bg-gray-800 text-white py-6 text-center">
+                    <p>&copy; 2025 Trendy Products. All rights reserved.</p>
+                    <p className="mt-2">Built with WebWave | Contact us: support@trendyproducts.com</p>
+                </footer>
+            );
+        }
+
+        function App() {
+            return (
+                <div>
+                    <Header />
+                    <ProductGrid />
+                    <Footer />
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
